@@ -28,7 +28,7 @@ A law practitioner(e.g. lawyer), law enforcers (e.g. police) and even a common m
 [Github : https://github.com/THEAKS1]
 
 4) Anuj Singh
-[Github : https://github.com/anuj-s1ngh/]
+[Github : https://github.com/anujsngh/]
 
 
 
