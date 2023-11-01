@@ -1,4 +1,4 @@
-## Project Title : AI Lawyer (Legal Research Tool)
+## Project Title : LegalSage
 
 ### Description : 
 The project helps mainly in two tasks: 
