@@ -1,6 +1,8 @@
 ## Project Title : LegalSage
 
 ### Description : 
+Empowering Legal Research: Our project streamlines case analysis by efficiently locating relevant legal precedents and identifying pertinent laws and sections applicable to the current case, aiding in comprehensive and thorough legal research.
+
 The project helps mainly in two tasks: 
 1) Find relevant cases which includes similar scenarios as the current case.
 2) Find applicable law/act and it's sections in the scenario of current case.
