@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+
+<h5 class="mt-4 mb-2">Relevant Statutes Search Results</h5>
+
+<table class="table table-bordered" style="margin-left: auto;margin-right: auto;">
+    <tbody>
+        {% for doc in top_docs %}
+            <tr>
+                <td rowspan="4" style="text-align: center;white-space: nowrap;">S.No. {{ doc['doc_id'] }}</td>
+                <td>Act</td>
+                <td>{{ doc['content']['act'] }}</td>
+                <td width="20%">Reference</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Chapter {{ doc['content']['chapter_num'] }}</td>
+                <td>{{ doc['content']['chapter_title'] }}</td>
+                <td rowspan="1"><a href="#" target="_blank"></a><a href="{{ doc['content']['section_url'] }}" target="_blank">View on IndiaCode</a><br></td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Section <strong>{{ doc['content']['section_num'] }}</strong></td>
+                <td>{{ doc['content']['section_title'] }}</td>
+                <td rowspan="2"><a href="{{ url_for('serve_text', path=doc['content']['pdf_url']) }}" target="_blank">View PDF</a></td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Details</td>
+                <td>{{ doc['content']['details'] }}</td>
+            </tr>
+            <!-- <tr style="height:100%;">
+                <td>Petitioner Name</td>
+                <td>{{ doc['content']['pet_name'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Respondent Name</td>
+                <td>{{ doc['content']['resp_name'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Judgment By</td>
+                <td>{{ doc['content']['judge_by'] }}</td>
+            </tr> -->
+            <!-- <tr>
+                <td>PDF</td>
+                <td><iframe crossorigin="anonymous" src="{{ doc['content']['pdf_url'] }}" width="100%" height="600px"></iframe></td>
+            </tr> -->
+            <tr>
+                <td colspan="4"></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+    
+{% endblock %}

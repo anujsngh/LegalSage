@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+
+<h5 class="mt-4 mb-2">Relevant Case Search Results</h5>
+
+<table class="table table-bordered" style="margin-left: auto;margin-right: auto;">
+    <tbody>
+        {% for row in top_case_pdfs_dict %}
+            <tr>
+                <td rowspan="8" style="text-align: center;white-space: nowrap;">S.No. {{ loop.index }}</td>
+                <td>Court</td>
+                <td>{{ row['court'] }}</td>
+                <td width="20%">Judgement</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>CNR Number</td>
+                <td>{{ row['cnr_num'] }}</td>
+                <td rowspan="7">
+                    <!-- <object data="{{ url_for('serve_pdf', path=row['pdf']) }}" type="application/pdf" width="100%" height="600px">
+                        <p>Your browser does not support PDFs. <a download="{{ row['pdf'] }}" href="data/case_docs/IT_ACT_2000/{{ row['pdf'] }}">Click here to download the PDF</a>.</p>
+                    </object> -->
+                    <a href="{{ url_for('serve_pdf', path=row['pdf']) }}" target="_blank">View PDF</a>
+                    <br>
+                </td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Case Number</td>
+                <td>{{ row['case_num'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Title</td>
+                <td>{{ row['case_title'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Date of Registration</td>
+                <td>{{ row['date_of_register'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Date of Judgment</td>
+                <td>{{ row['date_of_decision'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Judgment By</td>
+                <td>{{ row['judges'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Nature of Disposal</td>
+                <td>{{ row['disposal_nature'] }}</td>
+            </tr>
+            <tr>
+                <td colspan="4"></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+    
+{% endblock %}
